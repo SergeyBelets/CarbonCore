@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <radialGradient id="earthGradient" cx="50%" cy="50%" r="55%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#5a5a5a" />
+      <stop offset="85%" stop-color="#3a3a3a" />
+      <stop offset="100%" stop-color="#2a2a2a" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Main globe -->
+  <circle cx="60" cy="55" r="40" fill="url(#earthGradient)" filter="drop-shadow(0 2px 3px rgba(0,0,0,0.3))" />
+  
+  <!-- Continents -->
+  <path d="M35,40 Q40,35 45,38 T55,35 Q60,32 65,36 T80,38 Q75,45 72,52 T65,58 Q60,65 52,62 T40,60 Q35,55 30,50 Z" fill="#4d4d4d" />
+  <path d="M70,65 Q75,60 78,65 T85,70 Q80,75 78,70 Z" fill="#555555" />
+  <path d="M50,75 Q55,73 59,75 T65,80 Q60,85 55,83 T50,80 Z" fill="#4a4a4a" />
+  
+  <!-- Tree on top -->
+  <g transform="translate(45, 15) scale(0.7)">
+    <path d="M10,30 Q20,10 30,30 T50,30 Q40,15 30,0 Q20,15 10,30 Z" fill="#666666" />
+    <rect x="28" y="30" width="4" height="10" fill="#555555" />
+  </g>
+  
+  <!-- Scattered leaves -->
+  <g opacity="0.5">
+    <ellipse cx="30" cy="40" rx="3" ry="2" fill="#555555" transform="rotate(-15 30 40)" />
+    <ellipse cx="85" cy="55" rx="4" ry="2" fill="#5a5a5a" transform="rotate(25 85 55)" />
+    <ellipse cx="70" cy="30" rx="3" ry="2" fill="#666666" transform="rotate(45 70 30)" />
+    <ellipse cx="40" cy="75" rx="4" ry="2" fill="#5d5d5d" transform="rotate(-30 40 75)" />
+    <ellipse cx="90" cy="65" rx="3" ry="2" fill="#626262" transform="rotate(10 90 65)" />
+  </g>
+  
+  <!-- Small plants -->
+  <g opacity="0.7">
+    <path d="M85,45 C88,40 90,42 93,40" stroke="#636363" stroke-width="1" fill="none" />
+    <path d="M85,45 C82,38 85,36 83,32" stroke="#636363" stroke-width="1" fill="none" />
+    
+    <path d="M35,65 C38,60 42,63 44,60" stroke="#5a5a5a" stroke-width="1" fill="none" />
+    <path d="M35,65 C32,60 34,57 31,55" stroke="#5a5a5a" stroke-width="1" fill="none" />
+  </g>
+  
+  <!-- Error text -->
+  <text x="60" y="115" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="14" fill="#555555">Error</text>
+</svg>

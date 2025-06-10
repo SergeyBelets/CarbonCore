@@ -1,0 +1,25 @@
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4CAF50" />
+      <stop offset="100%" stop-color="#2E7D32" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo sphere -->
+  <circle cx="20" cy="20" r="18" fill="url(#logoGradient)" />
+  
+  <!-- Continents/patterns inside -->
+  <path d="M10,15 C15,12 22,18 28,15 C33,12 35,20 32,25 C29,30 20,25 15,28 C10,31 5,23 10,15 Z" 
+        fill="#8BC34A" />
+  
+  <!-- Smaller green patches -->
+  <circle cx="10" cy="10" r="3" fill="#A5D6A7" />
+  <circle cx="30" cy="12" r="2" fill="#A5D6A7" />
+  <circle cx="25" cy="28" r="3" fill="#A5D6A7" />
+  <circle cx="12" cy="30" r="2" fill="#A5D6A7" />
+  
+  <!-- Blue water hints -->
+  <circle cx="15" cy="20" r="1" fill="#2196F3" />
+  <circle cx="28" cy="25" r="1" fill="#2196F3" />
+</svg>

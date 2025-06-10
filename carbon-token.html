@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarbonCore - Carbon Token</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <style>
+        /* Center timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 0;
+        }
+        
+        /* Center comparison table */
+        .comparison-table {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        /* Center process diagram */
+        .process-diagram {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: var(--spacing-xl) auto;
+            padding: 0 var(--spacing-lg);
+            max-width: 1000px;
+        }
+        
+        /* Center feature list */
+        .feature-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo-with-text.svg" alt="CarbonCore Logo">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="carbon-token.html">Carbon Token</a></li>
+                        <li><a href="economics.html">Economics</a></li>
+                        <li><a href="uid-object.html">UniqueIDs</a></li>
+                    </ul>
+                </nav>
+                <div class="connect-wallet">
+                    <button id="connectWalletBtn" class="btn btn-primary">
+                        <img src="img/metamask.svg" alt="MetaMask">
+                        Connect Wallet
+                    </button>
+                    <div id="walletInfo" class="wallet-info hidden">
+                        <span id="walletAddress"></span>
+                        <a href="dashboard.html" class="dashboard-link">Dashboard</a>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="carbon-token.html" class="active">Carbon Token</a></li>
+            <li><a href="economics.html">Economics</a></li>
+            <li><a href="nft-object.html">NFT Objects</a></li>
+            <li class="mobile-connect-wallet">
+                <button id="mobileConnectWalletBtn" class="btn btn-primary">
+                    <img src="img/metamask.svg" alt="MetaMask">
+                    Connect Wallet
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="section">
+            <div class="container text-center">
+                <h1>Carbon Tokens</h1>
+                <p style="max-width: 800px; margin: 0 auto 2rem;">CarbonCore's unique approach to tokenizing carbon credits on the blockchain, providing transparency, traceability, and ease of trading.</p>
+            </div>
+        </section>
+
+        <!-- Token Explanation Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">What Are Carbon Tokens?</h2>
+                    <p class="section-subtitle">Understanding how CarbonCore tokenizes carbon credits for maximum transparency and efficiency.</p>
+                </div>
+                <div class="info-box" style="max-width: 800px; margin: 0 auto;">
+                    <p>Carbon tokens are digital assets on the blockchain that represent carbon credits from verified carbon sequestration projects. Each token is backed by a specific amount of CO₂ that has been absorbed by a verified territory.</p>
+                    <p>CarbonCore implements a <strong>territory-specific token model</strong>, where each verified territory and vintage year combination receives its own dedicated ERC-20 token contract with a standardized naming convention.</p>
+                </div>
+                
+                <div style="margin: 2rem auto; max-width: 800px;">
+                    <h3 class="text-center">Key Features of CarbonCore Tokens:</h3>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>Transparent Naming</h4>
+                                <p>Each token follows a standardized naming pattern: <code>CC{TerritoryID}{Year}</code> (e.g., CC422025 for Territory ID 42, vintage year 2025)</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>Direct Territory Link</h4>
+                                <p>Every token is directly linked to a specific territory with verifiable boundaries, characteristics, and carbon sequestration metrics.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>Differentiated Pricing</h4>
+                                <p>Different territories can have different token values based on their unique characteristics and carbon absorption capacities.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>Standard Compatibility</h4>
+                                <p>ERC-20 tokens are widely supported by wallets, exchanges, and DeFi protocols for maximum interoperability.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Token Lifecycle Section -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Token Lifecycle</h2>
+                    <p class="section-subtitle">From creation to retirement, understanding the carbon token journey.</p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item timeline-left">
+                        <div class="timeline-content">
+                            <h3>Token Creation</h3>
+                            <p>After territory verification by experts and VVB authorities, the TerritoryTokenFactory deploys a new ERC-20 token contract specifically for that territory.</p>
+                            <p>Token naming follows the convention: <code>CC{TerritoryID}{Year}</code></p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-right">
+                        <div class="timeline-content">
+                            <h3>Token Issuance</h3>
+                            <p>Tokens are minted daily according to the verified CO₂ absorption rate of the territory and sent directly to the territory owner's wallet.</p>
+                            <p>The issuance rate is determined by scientific measurements and expert verification.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-left">
+                        <div class="timeline-content">
+                            <h3>Token Trading</h3>
+                            <p>Territory owners can trade their tokens with buyers on the CarbonCore marketplace or other compatible exchanges.</p>
+                            <p>Each token can be independently valued based on territory characteristics.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-right">
+                        <div class="timeline-content">
+                            <h3>Token Retirement</h3>
+                            <p>Buyers can permanently retire tokens to offset their carbon emissions, receiving a certificate of carbon offset.</p>
+                            <p>Retired tokens are removed from circulation, ensuring they cannot be double-counted.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Token Benefits Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Benefits of Tokenized Carbon Credits</h2>
+                    <p class="section-subtitle">Why CarbonCore's approach offers advantages over traditional carbon credits.</p>
+                </div>
+                
+                <div style="margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <h3 class="text-center">Comparison with Traditional Carbon Credits</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Traditional Carbon Credits</th>
+                                <th>CarbonCore Tokens</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Transparency</td>
+                                <td>Limited visibility into source and verification</td>
+                                <td>Full transparency with blockchain verification</td>
+                            </tr>
+                            <tr>
+                                <td>Traceability</td>
+                                <td>Difficult to trace back to source</td>
+                                <td>Each token links directly to specific territory</td>
+                            </tr>
+                            <tr>
+                                <td>Trading</td>
+                                <td>Complex, broker-dependent process</td>
+                                <td>Simple peer-to-peer trading on blockchain</td>
+                            </tr>
+                            <tr>
+                                <td>Verification</td>
+                                <td>Manual, time-consuming process</td>
+                                <td>Automated verification with expert input</td>
+                            </tr>
+                            <tr>
+                                <td>Pricing</td>
+                                <td>Often bundled, obscuring quality differences</td>
+                                <td>Territory-specific pricing based on quality</td>
+                            </tr>
+                            <tr>
+                                <td>Divisibility</td>
+                                <td>Limited, often sold in large units</td>
+                                <td>Highly divisible, enabling smaller purchases</td>
+                            </tr>
+                            <tr>
+                                <td>Accessibility</td>
+                                <td>Primarily accessible to large corporations</td>
+                                <td>Available to individuals and businesses of all sizes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="info-box" style="max-width: 800px; margin: 0 auto;">
+                    <h3 style="margin-top: 0; text-align: center;">External Verification of Tokens</h3>
+                    <p>When a token holder wants to verify carbon credits outside the CarbonCore platform:</p>
+                    <ol>
+                        <li><strong>Token Identifier:</strong> The token symbol itself (CC{TerritoryID}{Year}) serves as a clear identifier of territory and vintage.</li>
+                        <li><strong>Quick Verification:</strong> Anyone can verify a token at <code>carboncore.earth/verify?token=0xTokenAddress</code></li>
+                        <li><strong>Token Metadata:</strong> Each token contains a territoryURI property pointing to verification details</li>
+                        <li><strong>Blockchain Direct Verification:</strong> External systems can query the TerritoryTokenFactory contract directly</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Implementation Section -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Technical Implementation</h2>
+                    <p class="section-subtitle">How CarbonCore tokens are implemented on the blockchain.</p>
+                </div>
+                
+                <div class="process-diagram">
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <img src="img/carbon-token.svg" alt="Territory Verification">
+                        </div>
+                        <div class="process-title">Territory Verification</div>
+                        <p>VVB approves the territory</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <img src="img/carbon-token.svg" alt="Token Creation">
+                        </div>
+                        <div class="process-title">Token Creation</div>
+                        <p>Factory deploys ERC-20 contract</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <img src="img/carbon-token.svg" alt="Issuance Setup">
+                        </div>
+                        <div class="process-title">Issuance Setup</div>
+                        <p>Set parameters based on verification</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <img src="img/carbon-token.svg" alt="Token Minting">
+                        </div>
+                        <div class="process-title">Token Minting</div>
+                        <p>Daily minting based on CO₂ absorption</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Ready to Manage Carbon Tokens?</h2>
+                    <p style="max-width: 600px; margin: 0 auto 2rem;">Connect your wallet to start exploring the CarbonCore platform.</p>
+                    <button class="btn btn-primary btn-large" id="ctaConnectWalletBtn">
+                        <img src="img/metamask.svg" alt="MetaMask">
+                        <span id="ctaButtonText">Connect Wallet</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="img/logo.svg" alt="CarbonCore">
+                    <p>CarbonCore</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="carbon-token.html">Carbon Token</a></li>
+                            <li><a href="economics.html">Economics</a></li>
+                            <li><a href="uid-object.html">NFT Objects</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>Email: info@carboncore.earth</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CarbonCore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<!-- Core Scripts -->
+<script src="js/lib/ethers-5.7.2.umd.min.js" type="application/javascript"></script>
+<script src="js/config.js"></script>
+<script src="js/web3-integration.js"></script>
+<script src="js/utils.js"></script>
+
+    <script>
+        // Additional page-specific scripts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up additional button event listeners
+            const ctaConnectWalletBtn = document.getElementById('ctaConnectWalletBtn');
+            const ctaButtonText = document.getElementById('ctaButtonText');
+            
+            if (ctaConnectWalletBtn && ctaButtonText) {
+                const walletAddress = sessionStorage.getItem('walletAddress');
+                if (walletAddress) {
+                    ctaButtonText.textContent = 'Disconnect Wallet';
+                    ctaConnectWalletBtn.addEventListener('click', function() {
+                        // Remove from session storage
+                        sessionStorage.removeItem('walletAddress');
+                        
+                        // Reload the page
+                        window.location.reload();
+                    });
+                } else {
+                    ctaButtonText.textContent = 'Connect Wallet';
+                    ctaConnectWalletBtn.addEventListener('click', connectWallet);
+                }
+            }
+        });
+    </script>
+
+<!-- Mobile Web3 Support -->
+<script src="js/mobile-web3.js"></script>
+
+<!-- Main Script (загружается последним) -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

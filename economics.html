@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarbonCore - Economics</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <style>
+        /* Ensure document flow is centered */
+        .document-flow {
+            margin: var(--spacing-xl) auto;
+            position: relative;
+            max-width: 900px;
+        }
+        
+        /* Center roles grid */
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) auto;
+            max-width: 1200px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo-with-text.svg" alt="CarbonCore Logo">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="carbon-token.html">Carbon Token</a></li>
+                        <li><a href="economics.html">Economics</a></li>
+                        <li><a href="uid-object.html">UniqueIDs</a></li>
+                    </ul>
+                </nav>
+                <div class="connect-wallet">
+                    <button id="connectWalletBtn" class="btn btn-primary">
+                        <img src="img/metamask.svg" alt="MetaMask">
+                        Connect Wallet
+                    </button>
+                    <div id="walletInfo" class="wallet-info hidden">
+                        <span id="walletAddress"></span>
+                        <a href="dashboard.html" class="dashboard-link">Dashboard</a>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="carbon-token.html">Carbon Token</a></li>
+            <li><a href="economics.html" class="active">Economics</a></li>
+            <li><a href="uid-object.html">NFT Objects</a></li>
+            <li class="mobile-connect-wallet">
+                <button id="mobileConnectWalletBtn" class="btn btn-primary">
+                    <img src="img/metamask.svg" alt="MetaMask">
+                    Connect Wallet
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="section">
+            <div class="container text-center">
+                <h1>CarbonCore Economics</h1>
+                <p style="max-width: 800px; margin: 0 auto 2rem;">Understanding the economic model of the CarbonCore platform and how it creates value for all participants.</p>
+            </div>
+        </section>
+
+        <!-- Document Flow Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Document Flow</h2>
+                    <p class="section-subtitle">How information and value move through the CarbonCore ecosystem.</p>
+                </div>
+                
+                <div class="document-flow">
+                    <div class="document-flow-item">
+                        <div class="document-flow-icon">
+                            <img src="img/nft-objects.svg" alt="Territory Registration">
+                        </div>
+                        <div class="document-flow-content">
+                            <h3 class="document-flow-title">Territory Registration</h3>
+                            <p>Landowners submit territory details, including location, boundaries, and characteristics. The data is stored both on the blockchain (basic information) and in the PostgreSQL database (detailed information) with PostGIS extension for geographical data.</p>
+                            <p>At this stage, the territory receives a unique ID and is assigned a "Pending" status.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="document-flow-item">
+                        <div class="document-flow-icon">
+                            <img src="img/carbon-token.svg" alt="Expert Verification">
+                        </div>
+                        <div class="document-flow-content">
+                            <h3 class="document-flow-title">Expert Verification</h3>
+                            <p>Experts with the EXPERT_ROLE claim territories for verification on a first-come-first-served basis. They examine the territory details, potentially request additional information, and validate key metrics such as area, oxygen production, and CO₂ absorption.</p>
+                            <p>The expert submits a verification report with their assessment and recommendations, which changes the territory status to "ExpertVerified" if approved.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="document-flow-item">
+                        <div class="document-flow-icon">
+                            <img src="img/wallet-connect.svg" alt="VVB Verification">
+                        </div>
+                        <div class="document-flow-content">
+                            <h3 class="document-flow-title">VVB Verification</h3>
+                            <p>Authorized VVB entities with the VVB_ROLE review the expert verification and provide final approval. They set a validity period for the verification (default: 1 year) and may add additional notes or requirements.</p>
+                            <p>Upon VVB approval, the territory status changes to "VVBVerified" and becomes eligible for token generation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="document-flow-item">
+                        <div class="document-flow-icon">
+                            <img src="img/logo.svg" alt="Token Generation">
+                        </div>
+                        <div class="document-flow-content">
+                            <h3 class="document-flow-title">Token Generation</h3>
+                            <p>The system automatically creates a territory-specific ERC-20 token contract through the TerritoryTokenFactory. Tokens are named according to the pattern CC{TerritoryID}{Year} for clear identification.</p>
+                            <p>Token minting occurs daily at UTC midnight based on the verified CO₂ absorption rate. Tokens are sent directly to the landowner's wallet and can be held, traded, or retired.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Actor Roles Section -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Actor Roles in the Ecosystem</h2>
+                    <p class="section-subtitle">Understanding the different participants and their economic incentives.</p>
+                </div>
+                
+                <div class="roles-grid">
+                    <div class="role-card">
+                        <div class="role-icon">
+                            <img src="img/nft-objects.svg" alt="Landowner" style="width: 50px; height: 50px;">
+                        </div>
+                        <h3 class="role-title">Landowners</h3>
+                        <p><strong>Responsibilities:</strong> Register territories, maintain land quality, provide documentation</p>
+                        <p><strong>Benefits:</strong> Receive carbon tokens daily, new revenue stream from previously unused or underutilized land</p>
+                    </div>
+                    
+                    <div class="role-card">
+                        <div class="role-icon">
+                            <img src="img/carbon-token.svg" alt="Expert" style="width: 50px; height: 50px;">
+                        </div>
+                        <h3 class="role-title">Verification Experts</h3>
+                        <p><strong>Responsibilities:</strong> Verify territory details, assess carbon metrics, submit reports</p>
+                        <p><strong>Benefits:</strong> Earn fees for each verification, build reputation in the ecosystem</p>
+                    </div>
+                    
+                    <div class="role-card">
+                        <div class="role-icon">
+                            <img src="img/wallet-connect.svg" alt="VVB" style="width: 50px; height: 50px;">
+                        </div>
+                        <h3 class="role-title">VVB Entities</h3>
+                        <p><strong>Responsibilities:</strong> Provide final verification, set validity periods, ensure compliance</p>
+                        <p><strong>Benefits:</strong> Facilitate carbon reduction, meet climate goals, generate tax revenue</p>
+                    </div>
+                    
+                    <div class="role-card">
+                        <div class="role-icon">
+                            <img src="img/logo.svg" alt="Buyer" style="width: 50px; height: 50px;">
+                        </div>
+                        <h3 class="role-title">Carbon Credit Buyers</h3>
+                        <p><strong>Responsibilities:</strong> Purchase and retire tokens to offset emissions</p>
+                        <p><strong>Benefits:</strong> Meet ESG requirements, offset carbon footprint, transparent verification of offsets</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Token Economics Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Token Economics</h2>
+                    <p class="section-subtitle">How carbon tokens derive value and support the ecosystem.</p>
+                </div>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem; justify-content: center;">
+                    <div style="flex: 1; min-width: 300px; max-width: 500px;">
+                        <h3 class="text-center">Token Generation Model</h3>
+                        <div class="info-box">
+                            <p><strong>Formula:</strong> Daily tokens = (CO₂ absorption per year) ÷ 365</p>
+                            <p>Each token represents 1 ton of CO₂ absorbed by the verified territory.</p>
+                            <p>Tokens are minted daily at UTC midnight and sent directly to the landowner's wallet.</p>
+                        </div>
+                        
+                        <h3 class="text-center">Token Value Determinants</h3>
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <div class="feature-icon">⬆️</div>
+                                <div class="feature-text">
+                                    <h4>Territory Quality</h4>
+                                    <p>Pristine forests and high-biodiversity areas may command premium prices</p>
+                                </div>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon">⬆️</div>
+                                <div class="feature-text">
+                                    <h4>Verification Strictness</h4>
+                                    <p>Territories with more thorough verification generally have higher token values</p>
+                                </div>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon">⬆️</div>
+                                <div class="feature-text">
+                                    <h4>Location Value</h4>
+                                    <p>Territories in regions with high biodiversity or cultural significance</p>
+                                </div>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon">⬆️</div>
+                                <div class="feature-text">
+                                    <h4>Social Impact</h4>
+                                    <p>Territories supporting indigenous communities or social projects</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 300px; max-width: 500px;">
+                        <h3 class="text-center">Platform Fee Structure</h3>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Fee Type</th>
+                                    <th>Amount</th>
+                                    <th>Recipient</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Territory Registration</td>
+                                    <td>Onboarding Fee + Annual Support Fee</td>
+                                    <td>Platform</td>
+                                </tr>
+                                <tr>
+                                    <td>Expert Verification</td>
+                                    <td>Fixed fee + % of territory area</td>
+                                    <td>Expert (90%), Platform (10%)</td>
+                                </tr>
+                                <tr>
+                                    <td>VVB Verification</td>
+                                    <td>Fixed fee based on territory size</td>
+                                    <td>VVB Entity</td>
+                                </tr>
+                                <tr>
+                                    <td>Token Issuance</td>
+                                    <td>Included in your territory support fee</td>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <td>Transaction Fee</td>
+                                    <td>Ethereum network fee</td>
+                                    <td>Network</td>
+                                </tr>
+                                <tr>
+                                    <td>Token Retirement</td>
+                                    <td>0.5% of token value + transaction fee</td>
+                                    <td>Platform</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="info-box" style="max-width: 800px; margin: 0 auto;">
+                    <h3 style="margin-top: 0; text-align: center;">Market Dynamics</h3>
+                    <p>Carbon tokens within the CarbonCore ecosystem function in a dynamic market with several key features:</p>
+                    <ul style="margin-bottom: 0;">
+                        <li><strong>Price Discovery:</strong> Token prices are determined by market demand and territory-specific quality factors.</li>
+                        <li><strong>Direct Trading:</strong> Landowners can sell directly to buyers without intermediaries, increasing market efficiency.</li>
+                        <li><strong>Secondary Market:</strong> Tokens can be traded between buyers before retirement.</li>
+                        <li><strong>Differentiated Pricing:</strong> Unlike traditional carbon credits that often have uniform pricing, CarbonCore tokens have differentiated prices based on territory characteristics.</li>
+                        <li><strong>Transparency:</strong> All transactions are recorded on the blockchain, creating a transparent and auditable market.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Ready to Join the Carbon Economy?</h2>
+                    <p style="max-width: 600px; margin: 0 auto 2rem;">Connect your wallet to start exploring the CarbonCore platform.</p>
+                    <button class="btn btn-primary btn-large" id="ctaConnectWalletBtn">
+                        <img src="img/metamask.svg" alt="MetaMask">
+                        <span id="ctaButtonText">Connect Wallet</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="img/logo.svg" alt="CarbonCore">
+                    <p>CarbonCore</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="carbon-token.html">Carbon Token</a></li>
+                            <li><a href="economics.html">Economics</a></li>
+                            <li><a href="nft-object.html">NFT Objects</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>Email: info@carboncore.earth</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CarbonCore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<!-- Core Scripts -->
+<script src="js/lib/ethers-5.7.2.umd.min.js" type="application/javascript"></script>
+<script src="js/config.js"></script>
+<script src="js/web3-integration.js"></script>
+<script src="js/utils.js"></script>
+
+    <script>
+        // Additional page-specific scripts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up additional button event listeners
+            const ctaConnectWalletBtn = document.getElementById('ctaConnectWalletBtn');
+            const ctaButtonText = document.getElementById('ctaButtonText');
+            
+            if (ctaConnectWalletBtn && ctaButtonText) {
+                const walletAddress = sessionStorage.getItem('walletAddress');
+                if (walletAddress) {
+                    ctaButtonText.textContent = 'Disconnect Wallet';
+                    ctaConnectWalletBtn.addEventListener('click', function() {
+                        // Remove from session storage
+                        sessionStorage.removeItem('walletAddress');
+                        
+                        // Reload the page
+                        window.location.reload();
+                    });
+                } else {
+                    ctaButtonText.textContent = 'Connect Wallet';
+                    ctaConnectWalletBtn.addEventListener('click', connectWallet);
+                }
+            }
+        });
+    </script>
+
+
+
+<!-- Mobile Web3 Support -->
+<script src="js/mobile-web3.js"></script>
+
+<!-- Main Script (загружается последним) -->
+<script src="js/main.js"></script>
+
+
+</body>
+</html>

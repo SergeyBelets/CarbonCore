@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarbonCore - Dashboard</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/profile-dashboard-styles.css">
+    <link rel="stylesheet" href="css/profile-wide.css">
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo-with-text.svg" alt="CarbonCore Logo">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="carbon-token.html">Carbon Token</a></li>
+                        <li><a href="economics.html">Economics</a></li>
+                        <li><a href="uid-object.html">UniqueIDs</a></li>
+                        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    </ul>
+                </nav>
+                <div class="connect-wallet">
+                    <button id="connectWalletBtn" class="btn btn-primary">
+                        <img src="img/metamask.svg" alt="MetaMask">
+                        Connect Wallet
+                    </button>
+                    <div id="walletInfo" class="wallet-info hidden">
+                        <span id="walletAddress"></span>
+                        <a href="dashboard.html" class="dashboard-link">Dashboard</a>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="carbon-token.html">Carbon Token</a></li>
+            <li><a href="economics.html">Economics</a></li>
+            <li><a href="uid-object.html">UniqueIDs</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section">
+            <div class="container">
+                <!-- Dashboard Container -->
+                <div class="dashboard-container">
+                    <div class="dashboard-header">
+                        <h1>Dashboard</h1>
+                        <div class="status-badge">🚧 Under Development</div>
+                    </div>
+                    
+                    <!-- Network Notice -->
+                    <div class="dashboard-section">
+                        <div class="alert alert-warning">
+                            <h3>⚠️ Network Notice</h3>
+                            <p><strong>Current Status:</strong> Ethereum mainnet deployment in progress</p>
+                            <p><strong>Network:</strong> Ready for Ethereum mainnet</p>
+                            <p><strong>Expected Launch:</strong> Q2 2025</p>
+                        </div>
+                    </div>
+
+                    <!-- Welcome Message -->
+                    <div class="dashboard-section">
+                        <div class="dashboard-welcome">
+                            <div class="user-info-summary">
+                                <div class="user-avatar">🌱</div>
+                                <div class="user-details">
+                                    <h3>Welcome to CarbonCore Dashboard</h3>
+                                    <p>The complete carbon credit management experience is coming soon.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Development Status -->
+                    <div class="dashboard-section">
+                        <h3>Development Progress</h3>
+                        <div class="info-box">
+                            <p>Our team is working hard to bring you the complete carbon credit management experience. The dashboard will include comprehensive tools for territory management, token analytics, and carbon credit trading.</p>
+                        </div>
+                    </div>
+
+                    <!-- Features Preview -->
+                    <div class="dashboard-section">
+                        <h3>Coming Soon Features</h3>
+                        <div class="dashboard-cards">
+                            <div class="dashboard-card">
+                                <div class="dashboard-card-title">🔐 UniqueID Authentication</div>
+                                <div class="dashboard-card-content">
+                                    UniqueID-based user authentication system for secure access to platform features.
+                                </div>
+                                <div class="dashboard-card-action">
+                                    <a href="https://test.carboncore.earth/profile.html" class="btn btn-secondary" target="_blank">Try on Testnet</a>
+                                </div>
+                            </div>
+                            
+                            <div class="dashboard-card">
+                                <div class="dashboard-card-title">🌱 Territory Management</div>
+                                <div class="dashboard-card-content">
+                                    Register and manage your territories with real-time monitoring and verification.
+                                </div>
+                                <div class="dashboard-card-action">
+                                    <a href="https://test.carboncore.earth/territory.html" class="btn btn-secondary" target="_blank">Try on Testnet</a>
+                                </div>
+                            </div>
+                            
+                            <div class="dashboard-card">
+                                <div class="dashboard-card-title">📊 Carbon Analytics</div>
+                                <div class="dashboard-card-content">
+                                    Comprehensive analytics for carbon credit performance and environmental impact.
+                                </div>
+                                <div class="dashboard-card-action">
+                                    <a href="https://test.carboncore.earth/dashboard.html" class="btn btn-secondary" target="_blank">Try on Testnet</a>
+                                </div>
+                            </div>
+                            
+                            <div class="dashboard-card">
+                                <div class="dashboard-card-title">💰 Token Trading</div>
+                                <div class="dashboard-card-content">
+                                    Trade carbon credits and manage OTC deals with built-in escrow system.
+                                </div>
+                                <div class="dashboard-card-action">
+                                    <button class="btn btn-secondary" disabled>Coming Soon</button>
+                                </div>
+                            </div>
+                            
+                            <div class="dashboard-card">
+                                <div class="dashboard-card-title">📈 Real-time Monitoring</div>
+                                <div class="dashboard-card-content">
+                                    Monitor your territories with satellite and drone data integration.
+                                </div>
+                                <div class="dashboard-card-action">
+                                    <button class="btn btn-secondary" disabled>Coming Soon</button>
+                                </div>
+                            </div>
+                            
+                            <div class="dashboard-card">
+                                <div class="dashboard-card-title">⚙️ Settings & Config</div>
+                                <div class="dashboard-card-content">
+                                    Configure your account preferences and notification settings.
+                                </div>
+                                <div class="dashboard-card-action">
+                                    <a href="https://test.carboncore.earth/settings.html" class="btn btn-secondary" target="_blank">Try on Testnet</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testnet Notice -->
+                    <div class="dashboard-section">
+                        <div class="alert alert-info">
+                            <h4>🧪 Test Our Features</h4>
+                            <p>While we prepare for mainnet launch, you can explore all features on our testnet environment:</p>
+                            <div class="dashboard-card-action" style="margin-top: 1rem;">
+                                <a href="https://test.carboncore.earth" class="btn btn-primary" target="_blank">Visit Testnet →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Back to Home -->
+                    <div class="dashboard-section">
+                        <div class="dashboard-container">
+                            <a href="index.html" class="btn btn-secondary">← Back to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="img/logo.svg" alt="CarbonCore">
+                    <p>CarbonCore</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="carbon-token.html">Carbon Token</a></li>
+                            <li><a href="economics.html">Economics</a></li>
+                            <li><a href="uid-object.html">UniqueIDs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>Email: info@carboncore.earth</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CarbonCore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/lib/ethers-5.7.2.umd.min.js" type="application/javascript"></script>
+    <script src="js/config.js"></script>
+    <script src="js/metamask-connect.js"></script>
+    <script src="js/web3-integration.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/mobile-web3.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Simple mobile menu toggle
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('active');
+            }
+        });
+
+        // Simple wallet connect placeholder
+        document.querySelector('#connectWalletBtn')?.addEventListener('click', function() {
+            if (typeof window.connectWallet === 'function') {
+                window.connectWallet();
+            } else {
+                alert('Wallet connection will be available when Ethereum mainnet contracts are deployed. Stay tuned!');
+            }
+        });
+    </script>
+</body>
+</html>

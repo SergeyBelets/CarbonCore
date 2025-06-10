@@ -1,0 +1,35 @@
+<svg width="100" height="120" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="earthGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4CAF50" />
+      <stop offset="100%" stop-color="#2E7D32" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Earth sphere -->
+  <circle cx="50" cy="70" r="35" fill="url(#earthGradient)" />
+  
+  <!-- Continents on earth -->
+  <path d="M30,60 C40,55 50,65 55,60 C60,55 65,65 60,70 C55,75 45,70 40,65 Z" 
+        fill="#8BC34A" />
+  <path d="M45,50 C50,45 60,55 55,60 C50,65 40,55 45,50 Z" 
+        fill="#8BC34A" />
+  <path d="M70,65 C75,60 80,70 75,75 C70,80 65,70 70,65 Z" 
+        fill="#8BC34A" />
+  
+  <!-- Plant stem -->
+  <path d="M50,70 C50,60 50,40 50,20" 
+        stroke="#2E7D32" stroke-width="3" fill="none" />
+  
+  <!-- Leaves -->
+  <path d="M50,45 C60,40 65,30 60,25 C55,20 45,25 50,45" 
+        fill="#4CAF50" />
+  <path d="M50,45 C40,40 35,30 40,25 C45,20 55,25 50,45" 
+        fill="#4CAF50" />
+  
+  <!-- Additional small leaves -->
+  <path d="M50,60 C55,55 60,50 55,45 C50,40 45,50 50,60" 
+        fill="#8BC34A" />
+  <path d="M50,60 C45,55 40,50 45,45 C50,40 55,50 50,60" 
+        fill="#8BC34A" />
+</svg>

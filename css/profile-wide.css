@@ -1,0 +1,120 @@
+/* Force override user info styles */
+.user-info-summary {
+    display: flex !important;
+    align-items: center !important;
+    background-color: #f9f9f9 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05) !important;
+    margin-bottom: 1.5rem !important;
+    width: 100% !important;
+}
+
+.user-avatar {
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 50% !important;
+    margin-right: 1.5rem !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.user-details {
+    flex-grow: 1 !important;
+}
+
+/* Improved role badges */
+.role-badges {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    margin-top: 10px !important;
+}
+
+.role-badge {
+    display: inline-block !important;
+    padding: 6px 12px !important;
+    border-radius: 20px !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    color: white !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.2s ease !important;
+}
+
+.role-badge:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* Two-column layout for profile information */
+.profile-section {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.profile-field {
+    display: flex !important;
+    flex-direction: row !important;
+    margin-bottom: 0.8rem !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.profile-field-label {
+    font-weight: 600 !important;
+    color: var(--text-light) !important;
+    min-width: 180px !important;
+    width: 30% !important;
+    padding-right: 1rem !important;
+}
+
+.profile-field-value {
+    flex: 1 !important;
+    font-size: 1rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-field {
+        flex-direction: column !important;
+    }
+    
+    .profile-field-label {
+        width: 100% !important;
+        margin-bottom: 0.25rem !important;
+    }
+}
+
+/* Make sure the user info summary is properly styled */
+.user-info-summary {
+    display: flex !important;
+    align-items: center !important;
+    background-color: #f9f9f9 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05) !important;
+    margin-bottom: 1.5rem !important;
+    width: 100% !important;
+}
+
+/* Extremely specific selectors for profile field layout */
+body main section .container .profile-container .profile-section .profile-field {
+    display: flex !important;
+    flex-direction: row !important;
+    margin-bottom: 0.8rem !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    padding-bottom: 0.5rem !important;
+    width: 100% !important;
+}
+
+body main section .container .profile-container .profile-section .profile-field .profile-field-label {
+    font-weight: 600 !important;
+    color: var(--text-light) !important;
+    min-width: 180px !important;
+    width: 30% !important;
+    padding-right: 1rem !important;
+}
+
+body main section .container .profile-container .profile-section .profile-field .profile-field-value {
+    flex: 1 !important;
+    font-size: 1rem !important;
+}

@@ -1,0 +1,44 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="earthGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4CAF50" />
+      <stop offset="100%" stop-color="#2E7D32" />
+    </linearGradient>
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#8BC34A" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#4CAF50" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Glow effect -->
+  <circle cx="100" cy="100" r="95" fill="url(#glowGradient)" />
+  
+  <!-- Earth sphere -->
+  <circle cx="100" cy="100" r="80" fill="url(#earthGradient)" />
+  
+  <!-- Continents -->
+  <path d="M70,70 C85,60 105,75 115,65 C125,55 140,75 130,85 C120,95 100,80 90,90 C80,100 60,85 70,70 Z" 
+        fill="#8BC34A" />
+  <path d="M60,110 C75,95 95,120 110,105 C125,90 145,115 135,130 C125,145 105,120 90,135 C75,150 45,125 60,110 Z" 
+        fill="#8BC34A" />
+  <path d="M135,75 C150,65 165,90 150,100 C135,110 120,85 135,75 Z" 
+        fill="#8BC34A" />
+  
+  <!-- Tree on top -->
+  <path d="M100,20 C100,40 100,50 100,60" 
+        stroke="#795548" stroke-width="4" fill="none" />
+  
+  <!-- Tree foliage -->
+  <circle cx="100" cy="20" r="15" fill="#8BC34A" />
+  <circle cx="85" cy="30" r="12" fill="#8BC34A" />
+  <circle cx="115" cy="30" r="12" fill="#8BC34A" />
+  <circle cx="100" cy="35" r="10" fill="#8BC34A" />
+  
+  <!-- Leaves around the globe -->
+  <path d="M170,100 Q185,90 190,110 Q175,120 170,100 Z" fill="#8BC34A" />
+  <path d="M160,140 Q175,145 170,160 Q155,155 160,140 Z" fill="#8BC34A" />
+  <path d="M30,100 Q15,90 10,110 Q25,120 30,100 Z" fill="#8BC34A" />
+  <path d="M40,140 Q25,145 30,160 Q45,155 40,140 Z" fill="#8BC34A" />
+  <path d="M40,60 Q25,55 30,40 Q45,45 40,60 Z" fill="#8BC34A" />
+  <path d="M160,60 Q175,55 170,40 Q155,45 160,60 Z" fill="#8BC34A" />
+</svg>
